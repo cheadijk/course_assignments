@@ -1,28 +1,91 @@
 <!-- Task 5: Basic CSS Styling -->
 <!-- Objective: Learn how to apply styles to HTML elements. -->
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Introduction to CSS</title>
     <style>
+
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 20px;
+            padding: 20px;
+            display: flex;               
+            justify-content: center;     
+            align-items: center;
         }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
         h1 {
-            color: #4CAF50;
+            color: #1e90ff;               
+            font-family: 'Georgia', serif;
+            text-align: center;
         }
+
         p {
-            font-size: 16px;
+            font-size: 18px;
+            line-height: 1.6;
         }
+
         .important {
             font-weight: bold;
             color: red;
+            border: 2px solid red;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Introduction to CSS</h1>
-    <p>This is a basic example of CSS styling.</p>
-    <p class="important">This text is styled with the 'important' class.</p>
+    <div class="container">
+        <h1>Introduction to CSS</h1>
+        <p>This is a basic example of CSS styling.</p>
+        <p class="important">This text is styled with the 'important' class.</p>
+        <button class="button">Click Me</button>
+    </div>
 </body>
+</html>
 
 <!-- To-Do:
 1. Add a background color to the body.

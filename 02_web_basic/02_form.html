@@ -1,6 +1,8 @@
 <!-- Task 2: HTML Form Elements -->
 <!-- Objective: Learn how to create a form with input fields, buttons, and a submit action. -->
 
+<p>Please fill out this form to register for our web scraping training and provide your feedback.</p>
+
 <form action="/submit" method="post">
     <label for="name">Full Name:</label>
     <input type="text" id="name" name="name" required>
@@ -10,7 +12,48 @@
     <input type="email" id="email" name="email" required>
     <br><br>
 
-    <button type="submit">Submit</button>
+    <label for="feedback">Your Feedback:</label><br>
+    <textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Enter your comments here..."></textarea>
+    <br><br>
+
+    <label for="tool">Favorite Web Scraping Tool:</label>
+    <select id="tool" name="tool">
+        <option value="">--Please choose an option--</option>
+        <option value="beautifulsoup">BeautifulSoup</option>
+        <option value="scrapy">Scrapy</option>
+        <option value="selenium">Selenium</option>
+        <option value="puppeteer">Puppeteer</option>
+    </select>
+    <br><br>
+
+    <fieldset>
+        <legend>Preferred Programming Language:</legend>
+        <input type="radio" id="python" name="language" value="Python" required>
+        <label for="python">Python</label><br>
+
+        <input type="radio" id="javascript" name="language" value="JavaScript">
+        <label for="javascript">JavaScript</label><br>
+
+        <input type="radio" id="java" name="language" value="Java">
+        <label for="java">Java</label>
+    </fieldset>
+    <br>
+
+    <label for="start-date">Preferred Start Date:</label>
+    <input type="date" id="start-date" name="start_date">
+    <br><br>
+
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the terms and conditions</label>
+    <br><br>
+
+    <input type="hidden" name="submission_date" value="2025-05-13">
+
+    <button type="submit">Send</button>
+    <button type="reset">Reset</button>
+    <br><br>
+
+    <small>Thank you for your submission!</small>
 </form>
 
 <!-- To-Do: 

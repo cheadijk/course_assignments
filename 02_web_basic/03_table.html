@@ -1,27 +1,116 @@
 <!-- Task 3: HTML Table -->
 <!-- Objective: Learn how to structure data in a table. -->
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>John Doe</td>
-            <td>29</td>
-            <td>johndoe@example.com</td>
-        </tr>
-        <tr>
-            <td>Jane Smith</td>
-            <td>34</td>
-            <td>janesmith@example.com</td>
-        </tr>
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enhanced HTML Table</title>
+    <style>
+        table {
+            border: 2px dashed #333;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px dashed #333;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #e9e9e9;
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        #nameFilter {
+            margin-bottom: 15px;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+    <script>
+        function filterTable() {
+            const input = document.getElementById("nameFilter");
+            const filter = input.value.toLowerCase();
+            const rows = document.querySelectorAll("tbody tr");
+
+            rows.forEach(row => {
+                const nameCell = row.querySelector("td");
+                if (nameCell.textContent.toLowerCase().includes(filter)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <input type="text" id="nameFilter" onkeyup="filterTable()" placeholder="Search for a name...">
+
+    <table>
+        <caption>Team Member Directory</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Job Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://example.com/johndoe" target="_blank">John Doe</a></td>
+                <td>29</td>
+                <td>johndoe@example.com</td>
+                <td>Software Engineer</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>34</td>
+                <td>janesmith@example.com</td>
+                <td>Data Analyst</td>
+            </tr>
+            <tr>
+                <td>Michael Brown</td>
+                <td>41</td>
+                <td>michaelb@example.com</td>
+                <td>Project Manager</td>
+            </tr>
+            <tr>
+                <td>Sara Johnson</td>
+                <td>26</td>
+                <td>saraj@example.com</td>
+                <td>UX Designer</td>
+            </tr>
+            <!-- Nested row example (extra detail for Sara) -->
+            <tr>
+                <td colspan="4">
+                    <strong>Note:</strong> Sara recently led the UI redesign project with outstanding results.
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"><strong>Total Age:</strong> 29 + 34 + 41 + 26 = <strong>130</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
 
 <!-- To-Do:
 1. Add two more rows to the table with different data.
